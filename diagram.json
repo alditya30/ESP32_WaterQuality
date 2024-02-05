@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "author": "Afando Rafid F.A",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 66.06,
+      "left": -3.1,
+      "rotate": 270,
+      "attrs": {}
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": 254.4, "left": 1.5, "rotate": 270, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": 217.6,
+      "left": 216.8,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 154.6, "left": -193.3, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": 26.8, "left": 307.2, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": 27.5, "left": -192.2, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo2", "top": -69.2, "left": 307.2, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo3", "top": -165.2, "left": 307.2, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo4", "top": -261.2, "left": 307.2, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "dht1:SDA", "esp:13", "green", [ "h0" ] ],
+    [ "dht1:VCC", "esp:5V", "red", [ "h0" ] ],
+    [ "lcd1:GND", "esp:GND.1", "black", [ "h-124.8", "v-28.8" ] ],
+    [ "lcd1:VCC", "esp:3V3", "red", [ "h-9.6", "v105.7", "h-249.6", "v-143.85" ] ],
+    [ "lcd1:SCL", "esp:22", "magenta", [ "h-38.4", "v-172.5", "h-192" ] ],
+    [ "lcd1:SDA", "esp:21", "purple", [ "h-28.8", "v0.2", "h-19.2", "v-153.6", "h-153.6" ] ],
+    [ "pot1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot1:SIG", "esp:32", "green", [ "v26.5", "h183.1" ] ],
+    [ "servo1:GND", "esp:GND.3", "black", [ "h0" ] ],
+    [ "servo1:V+", "esp:5V", "red", [ "h-96", "v67.3" ] ],
+    [ "pot1:GND", "esp:GND.1", "black", [ "v36.1", "h260.3" ] ],
+    [ "pot2:GND", "esp:GND.1", "black", [ "v48", "h57.6", "v115.2", "h201.6" ] ],
+    [ "pot2:VCC", "esp:3V3", "red", [ "v19.2", "h66.4", "v76.8" ] ],
+    [ "pot2:SIG", "esp:33", "green", [ "v28.8", "h66.8", "v115.2", "h124.8" ] ],
+    [ "servo2:GND", "esp:GND.3", "black", [ "h0" ] ],
+    [ "servo2:V+", "esp:5V", "red", [ "h-96", "v259.3" ] ],
+    [ "servo2:PWM", "esp:19", "yellow", [ "h0" ] ],
+    [ "servo1:PWM", "esp:18", "gold", [ "h0" ] ],
+    [ "servo4:GND", "esp:GND.3", "black", [ "h0" ] ],
+    [ "servo3:GND", "esp:GND.3", "black", [ "h0" ] ],
+    [ "servo3:V+", "esp:5V", "red", [ "h-96", "v326.5" ] ],
+    [ "servo4:V+", "esp:5V", "red", [ "h-96", "v422.5" ] ],
+    [ "servo3:PWM", "esp:17", "gold", [ "h0" ] ],
+    [ "servo4:PWM", "esp:16", "gold", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
